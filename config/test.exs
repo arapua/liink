@@ -8,7 +8,7 @@ import Config
 config :liink, Liink.Repo,
   password: "postgres",
   username: "postgres",
-  hostname: "localhost",
+  hostname: System.get_env("DATABASE_HOST"),
   database: "hello_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
