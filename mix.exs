@@ -35,6 +35,7 @@ defmodule Liink.MixProject do
   defp deps do
     [
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:floki, ">= 0.30.0", only: :test},
       {:excoveralls, "~> 0.10", only: :test},
       {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
