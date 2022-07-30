@@ -5,5 +5,5 @@
 
 For use the project git hooks please run this command:
 ```bash
-$ git config core.hooksPath <hooks-dir>
+$ git config core.hooksPath git_hooks
 ```
