@@ -1,7 +1,8 @@
 FROM elixir:1.13-alpine
 
 RUN mix local.hex --force &&\
-  mix local.rebar --force
+  mix local.rebar --force &&\
+  apk add inotify-tools
 
 COPY . /opt
 WORKDIR /opt
