@@ -13,6 +13,8 @@ services:
       - DATABASE_PASSWORD=postgres
       - DATABASE_NAME=liink
     command: mix do deps.get, deps.compile, phx.server
+    volumes:
+      - .:/opt/
 
   test:
     build: .
@@ -25,6 +27,8 @@ services:
       - DATABASE_USERNAME=postgres
       - DATABASE_PASSWORD=postgres
       - DATABASE_NAME=liink-test
+    volumes:
+      - .:/opt/
 
   db:
     image: postgres:13

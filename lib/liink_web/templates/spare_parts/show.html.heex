@@ -1,0 +1,33 @@
+<h1>Show Spare parts</h1>
+
+<ul>
+
+  <li>
+    <strong>Link:</strong>
+    <%= @spare_parts.link %>
+  </li>
+
+  <li>
+    <strong>Picture:</strong>
+    <%= @spare_parts.picture %>
+  </li>
+
+  <li>
+    <strong>Device:</strong>
+    <%= @spare_parts.device %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @spare_parts.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @spare_parts.description %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.spare_parts_path(@conn, :edit, @spare_parts) %></span> |
+<span><%= link "Back", to: Routes.spare_parts_path(@conn, :index) %></span>

@@ -1,0 +1,29 @@
+<h1>Listing Parts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Device</th>
+      <th>Link</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for spare_parts <- @parts do %>
+    <tr>
+      <td><%= spare_parts.name %></td>
+      <td><%= spare_parts.device %></td>
+      <td><a>Clique Aqui</a></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.spare_parts_path(@conn, :show, spare_parts) %></span>
+        <span><%= link "Edit", to: Routes.spare_parts_path(@conn, :edit, spare_parts) %></span>
+        <span><%= link "Delete", to: Routes.spare_parts_path(@conn, :delete, spare_parts), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Spare parts", to: Routes.spare_parts_path(@conn, :new) %></span>
