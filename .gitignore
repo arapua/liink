@@ -2,3 +2,4 @@ deps/
 _build/
 .elixir_ls/
 .pg_volume/*
+priv/static/assets/*
