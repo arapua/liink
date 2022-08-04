@@ -1,4 +1,7 @@
 defmodule Liink.Parts.SpareParts do
+  @moduledoc """
+    SpareParts is the representation of parts and the link to buy then
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -15,7 +18,7 @@ defmodule Liink.Parts.SpareParts do
   @doc false
   def changeset(spare_parts, attrs) do
     spare_parts
-    |> cast(attrs, [:link, :picture, :device, :name, :description])
-    |> validate_required([:link, :picture, :device, :name, :description])
+    |> cast(attrs, [:link, :device, :name])
+    |> validate_required([:link, :device, :name])
   end
 end
