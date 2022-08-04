@@ -30,11 +30,9 @@ defmodule Liink.PartsTest do
       }
 
       assert {:ok, %SpareParts{} = spare_parts} = Parts.create_spare_parts(valid_attrs)
-      assert spare_parts.description == "some description"
       assert spare_parts.device == "some device"
       assert spare_parts.link == "some link"
       assert spare_parts.name == "some name"
-      assert spare_parts.picture == "some picture"
     end
 
     test "create_spare_parts/1 with invalid data returns error changeset" do
@@ -55,11 +53,9 @@ defmodule Liink.PartsTest do
       assert {:ok, %SpareParts{} = spare_parts} =
                Parts.update_spare_parts(spare_parts, update_attrs)
 
-      assert spare_parts.description == "some updated description"
       assert spare_parts.device == "some updated device"
       assert spare_parts.link == "some updated link"
       assert spare_parts.name == "some updated name"
-      assert spare_parts.picture == "some updated picture"
     end
 
     test "update_spare_parts/2 with invalid data returns error changeset" do

@@ -69,7 +69,7 @@ defmodule LiinkWeb.SparePartsControllerTest do
       assert redirected_to(conn) == Routes.spare_parts_path(conn, :show, spare_parts)
 
       conn = get(conn, Routes.spare_parts_path(conn, :show, spare_parts))
-      assert html_response(conn, 200) =~ "some updated description"
+      assert html_response(conn, 200) =~ "some updated device"
     end
 
     test "renders errors when data is invalid", %{conn: conn, spare_parts: spare_parts} do
