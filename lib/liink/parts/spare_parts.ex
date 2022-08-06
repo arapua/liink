@@ -4,6 +4,8 @@ defmodule Liink.Parts.SpareParts do
   """
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query
+  alias Liink.Repo
 
   schema "parts" do
     field(:description, :string)
@@ -13,6 +15,15 @@ defmodule Liink.Parts.SpareParts do
     field(:picture, :string)
 
     timestamps()
+  end
+
+  def search(query, search_term) do
+    wildcard_search = "%#{search_term}%"
+
+    from(parts in query,
+      where: ilike(parts.name, ^wildcard_search),
+      or_where: ilike(parts.device, ^wildcard_search)
+    )
   end
 
   @doc false

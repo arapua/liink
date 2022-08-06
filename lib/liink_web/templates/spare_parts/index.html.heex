@@ -1,5 +1,9 @@
 <h1>Listing Parts</h1>
-
+<%= form_for @conn, Routes.spare_parts_path(@conn, :index), [method: :get, class: "pull-right"], fn f -> %>
+  <%= search_input f, :query %>
+  <%= submit "Search" %>
+  <span class="pull-left"><%= link "Clear", to: Routes.spare_parts_path(@conn, :index) %></span>
+<% end %>
 <table>
   <thead>
     <tr>
