@@ -12,7 +12,7 @@ services:
       - DATABASE_USERNAME=postgres
       - DATABASE_PASSWORD=postgres
       - DATABASE_NAME=liink
-    command: mix do deps.get, deps.compile, phx.server
+    command: mix do deps.get, deps.compile, ecto.create, ecto.migrate, phx.server
     volumes:
       - .:/opt/
 
@@ -35,4 +35,5 @@ services:
     environment:
       - POSTGRES_PASSWORD=postgres
     ports:
-      - "5423:5432"
+      - "5432:5432"
+

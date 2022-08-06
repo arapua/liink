@@ -17,8 +17,17 @@ defmodule Liink.Parts do
       [%SpareParts{}, ...]
 
   """
-  def list_parts do
-    Repo.all(SpareParts)
+  def list_parts() do
+    SpareParts
+    |> Repo.all()
+  end
+
+  def list_parts(params) do
+    search_term = get_in(params, ["query"])
+
+    SpareParts
+    |> SpareParts.search(search_term)
+    |> Repo.all()
   end
 
   @doc """

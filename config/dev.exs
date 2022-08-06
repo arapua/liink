@@ -2,10 +2,10 @@ import Config
 
 # Configure your database
 config :liink, Liink.Repo,
-  username: System.get_env("DATABASE_USERNAME"),
-  password: System.get_env("DATABASE_PASSWORD"),
-  database: System.get_env("DATABASE_NAME"),
-  hostname: System.get_env("DATABASE_HOST"),
+  username: System.get_env("DATABASE_USERNAME", "postgres"),
+  password: System.get_env("DATABASE_PASSWORD", "postgres"),
+  database: System.get_env("DATABASE_NAME", "liink"),
+  hostname: System.get_env("DATABASE_HOST", "localhost:5423"),
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -65,7 +65,7 @@ config :liink, LiinkWeb.Endpoint,
   ]
 
 # Do not include metadata nor timestamps in development logs
-config :logger, :console, format: "[$level] $message\n"
+config :logger, :console, format: "[$level] $message\n", level: :debug
 
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.

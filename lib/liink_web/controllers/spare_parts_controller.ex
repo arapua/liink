@@ -3,9 +3,11 @@ defmodule LiinkWeb.SparePartsController do
 
   alias Liink.Parts
   alias Liink.Parts.SpareParts
+  require Logger
 
-  def index(conn, _params) do
-    parts = Parts.list_parts()
+  def index(conn, params) do
+    Logger.debug(params)
+    parts = Parts.list_parts(params)
     render(conn, "index.html", parts: parts)
   end
 
