@@ -19,6 +19,7 @@ defmodule LiinkWeb.Router do
 
     get("/", PageController, :index)
     resources("/parts", SparePartsController)
+    get("/parts/:id/redirect", SparePartsController, :redirect_part)
   end
 
   # Other scopes may use custom stacks.
