@@ -7,8 +7,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Device</th>
+      <th>Name | Device</th>
       <th>Link</th>
       <th>Actions</th>
     </tr>
@@ -16,14 +15,14 @@
   <tbody>
 <%= for spare_parts <- @parts do %>
     <tr>
-      <td><%= spare_parts.name %></td>
-      <td><%= spare_parts.device %></td>
-      <td><%= link "Clique Aqui", to: Routes.spare_parts_path(@conn, :redirect_part, spare_parts) %></td>
+      <td>
+        <span><%= link "#{spare_parts.name} | #{spare_parts.device}", to: Routes.spare_parts_path(@conn, :show, spare_parts) %></span>
+      </td>
+      <td><a href={"#{spare_parts.link}"}>Clique aqui</a></td>
 
       <td>
-        <span><%= link "Show", to: Routes.spare_parts_path(@conn, :show, spare_parts) %></span>
+        <span><%= link "Show", to: Routes.spare_parts_path(@conn, :show, spare_parts) %></span> | 
         <span><%= link "Edit", to: Routes.spare_parts_path(@conn, :edit, spare_parts) %></span>
-        <span><%= link "Delete", to: Routes.spare_parts_path(@conn, :delete, spare_parts), method: :delete, data: [confirm: "Are you sure?"] %></span>
       </td>
     </tr>
 <% end %>

@@ -61,11 +61,4 @@ defmodule LiinkWeb.SparePartsController do
     |> put_flash(:info, "Spare parts deleted successfully.")
     |> redirect(to: Routes.spare_parts_path(conn, :index))
   end
-
-  def redirect_part(conn, %{"id" => id}) do
-    spare_parts = Parts.get_spare_parts!(id)
-
-    conn
-    |> redirect(external: spare_parts.link)
-  end
 end
