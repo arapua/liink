@@ -28,7 +28,7 @@ defmodule Liink.Parts.SpareParts do
   @doc false
   def changeset(spare_parts, attrs) do
     spare_parts
-    |> cast(attrs, [:link, :device, :name])
+    |> cast(attrs, [:link, :device, :name, :description, :picture])
     |> validate_required([:link, :device, :name])
   end
 end

@@ -5,14 +5,6 @@
     </div>
   <% end %>
 
-  <%= label f, :link %>
-  <%= text_input f, :link %>
-  <%= error_tag f, :link %>
-
-  <%= label f, :picture %>
-  <%= text_input f, :picture %>
-  <%= error_tag f, :picture %>
-
   <%= label f, :device %>
   <%= text_input f, :device %>
   <%= error_tag f, :device %>
@@ -22,8 +14,16 @@
   <%= error_tag f, :name %>
 
   <%= label f, :description %>
-  <%= text_input f, :description %>
+  <%= textarea f, :description %>
   <%= error_tag f, :description %>
+
+  <%= label f, :link %>
+  <%= text_input f, :link %>
+  <%= error_tag f, :link %>
+
+  <%= label f, :picture %>
+  <%= text_input f, :picture %>
+  <%= error_tag f, :picture %>
 
   <div>
     <%= submit "Save" %>
