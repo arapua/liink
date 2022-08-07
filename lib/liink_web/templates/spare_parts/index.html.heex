@@ -18,7 +18,7 @@
     <tr>
       <td><%= spare_parts.name %></td>
       <td><%= spare_parts.device %></td>
-      <td><a>Clique Aqui</a></td>
+      <td><%= link "Clique Aqui", to: Routes.spare_parts_path(@conn, :redirect_part, spare_parts) %></td>
 
       <td>
         <span><%= link "Show", to: Routes.spare_parts_path(@conn, :show, spare_parts) %></span>

@@ -5,7 +5,6 @@ defmodule Liink.Parts.SpareParts do
   use Ecto.Schema
   import Ecto.Changeset
   import Ecto.Query
-  alias Liink.Repo
 
   schema "parts" do
     field(:description, :string)
