@@ -27,6 +27,11 @@ $ git config core.hooksPath git_hooks
 > Use `/parts` to acess a search engine of all parts
 
 ```bash
+/parts/new
+```
+> Use `/parts/new` to create a new part in DB.
+
+```bash
 /parts/{id}
 ```
 > Use `/parts/{id}` to search at `id` item in DB.
@@ -35,3 +40,4 @@ $ git config core.hooksPath git_hooks
 /parts/{id}/edit
 ```
 > Use `/parts/{id}/edit` to edit the `id`° item in DB.
+
