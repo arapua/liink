@@ -1,29 +1,49 @@
-
-<h3><%= link "< #{@spare_parts.device}", to: Routes.spare_parts_path(@conn, :index) %></h3>
-
 <ul>
+  <h3><%= link "< #{@spare_parts.device}", to: Routes.spare_parts_path(@conn, :index) %></h3>
 
-  <li>
-    <strong>Link:</strong>
-    <a href={"#{@spare_parts.link}"}>Clique aqui</a>
-  </li>
+  <div class="row">
+    <div class="column">
 
-  <li>
-    <strong>Picture:</strong> 
-     <img src={"#{@spare_parts.picture}"} max-width="600" width="auto" max-height="300" height="auto">
-  </li>
+      <p> 
+      <img src={"#{@spare_parts.picture}"} max-width="600" width="auto" max-height="300" height="auto">
+      </p>
 
-  <li>
-    <strong>Name:</strong>
-    <%= @spare_parts.name %>
-  </li>
+    </div>
 
-  <li>
-    <strong>Description:</strong>
-    <%= @spare_parts.description %>
-  </li>
+    <div class="column">
+      
+      <h1>
+        <strong> <%= @spare_parts.name %> </strong>
+      </h1>
+
+      <h4>       
+      <%= @spare_parts.description %>
+      </h4>
+
+      <p>
+        <strong>Link:</strong>
+        <a href={"#{@spare_parts.link}"}>Clique aqui</a>
+      </p>
+      
+      <p>
+        <span><%= link "Edit", to: Routes.spare_parts_path(@conn, :edit, @spare_parts) %></span> | 
+        <span><%= link "Delete", to: Routes.spare_parts_path(@conn, :delete, @spare_parts), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </p>
+    </div>
+  </div>
 
 </ul>
 
-<span><%= link "Edit", to: Routes.spare_parts_path(@conn, :edit, @spare_parts) %></span> | 
-<span><%= link "Delete", to: Routes.spare_parts_path(@conn, :delete, @spare_parts), method: :delete, data: [confirm: "Are you sure?"] %></span>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+</style>
