@@ -9,8 +9,6 @@
   <i>Bora encontrar a peça exata que está procurando?</i>
 </h3>
 
-
-
 <!-- RADIO --> <!-- RADIO -->  <!-- RADIO -->  <!-- RADIO -->  <!-- RADIO --> 
 <div class="hover-checkbox">
 
@@ -109,25 +107,15 @@
 <!-- RADIO --> <!-- RADIO -->  <!-- RADIO -->  <!-- RADIO -->  <!-- RADIO --> 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <%= form_for @conn, Routes.spare_parts_path(@conn, :index), [method: :get, class: "pull-right"], fn f -> %>
   <%= search_input f, :query %>
-  <%= submit "Search" %>
-  <span class="pull-left"><%= link "Clear", to: Routes.spare_parts_path(@conn, :index) %></span>
+  <div class="da-uma-centralizadinha">
+  <%= submit "Procurar" %>
+  <!-- <span class="pull-left"><%= link "Clear", to: Routes.spare_parts_path(@conn, :index) %></span> -->
+  </div>
 <% end %>
+
+
 <table>
   <thead>
     <tr>
