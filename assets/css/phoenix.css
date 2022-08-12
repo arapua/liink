@@ -165,3 +165,62 @@ header nav a {
   font-size: 6rem; 
   line-height: 1.25;
 }
+
+/* <!-- RADIO --> <!-- RADIO -->  <!-- RADIO -->  <!-- RADIO -->  <!-- RADIO --> */
+
+
+.checkbox {
+
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;  
+
+
+  padding-left:10px;
+  padding-right:10px;
+
+  padding-bottom:5px;
+  padding-top:5px;
+
+  width: auto;  
+
+  position: relative;
+  
+
+}
+
+.label-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.label-check:hover{
+  cursor: pointer;
+}
+
+.check {  
+  position: absolute;
+  opacity:0;  
+  
+}
+
+.path1{
+  stroke-dasharray:400;
+  stroke-dashoffset:400;
+  transition:.5s all;
+}
+.path2{
+  stroke-dasharray:1800;
+  stroke-dashoffset:1800;
+  transition:.5s all;
+}
+.check:checked + label svg g path {
+  stroke-dashoffset:0;
+}
+
