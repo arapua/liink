@@ -1,5 +1,5 @@
-<h3><%= link "< #{@spare_parts.device}", to: Routes.spare_parts_path(@conn, :index) %></h3>
-
+<h3><%= link "<- Voltar", to: Routes.spare_parts_path(@conn, :index) %></h3>
+<!--< #{@spare_parts.device} -->
 <div class="row">
   <div class="column column-img">
 
@@ -12,17 +12,21 @@
   <div class="column center">
     
     <h1>
-      <strong> <%= @spare_parts.name %> </strong>
+      <strong> 
+        <%= @spare_parts.name %> 
+      </strong>
     </h1>
 
     <h4>       
-    <%= @spare_parts.description %>
+      <%= @spare_parts.description %>
     </h4>
 
     <p>
-    <button class="button-27" role="button">Comprar Agora!      
-    </button>      
-      <a href={"#{@spare_parts.link}"}></a>        
+      <a href={"#{@spare_parts.link}"}>
+        <button class="button-27" role="button">
+          Comprar Agora!      
+        </button>      
+      </a>        
     </p>
     
     <p>

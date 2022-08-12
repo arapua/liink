@@ -1,4 +1,20 @@
-<h1>Listing Parts</h1>
+<h1 class="txt-center bigger">
+  <strong>
+    Liink - Search Engine
+  </strong>
+</h1>
+
+<h3 class="txt-center">
+
+  Uma forma simples, rápida e confiável de encontrar as <strong>melhores</strong> peças do mercado.
+  <i>Bora encontrar a peça exata que está procurando?</i>
+</h3>
+
+
+
+
+
+
 <%= form_for @conn, Routes.spare_parts_path(@conn, :index), [method: :get, class: "pull-right"], fn f -> %>
   <%= search_input f, :query %>
   <%= submit "Search" %>

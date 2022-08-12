@@ -156,3 +156,12 @@ header nav a {
   box-shadow: none;
   transform: translateY(0);
 }
+
+.txt-center{
+  text-align: center;
+}
+
+.bigger{
+  font-size: 6rem; 
+  line-height: 1.25;
+}
