@@ -28,13 +28,7 @@
       <%= error_tag f, :picture %>
 
 
-      <script>
-      document.getElementById('spare_parts_picture').oninput = function () {
-        var src = document.getElementById('spare_parts_picture').value;
-        document.getElementById('img-preview').src = src;        
-      }
-      </script>
-
+      
       <div>
         <%= submit "Salvar" %>
       </div>
@@ -45,17 +39,17 @@
     <div class="row">
       <div class="column column-img">
         <p> 
-          <img class="img-show" id="img-preview" src="https://cdn.shopify.com/s/files/1/0268/1454/6031/products/Dualtron-Thunder-II-lights-View_600x.jpg">
+          <img class="img-show" id="img-preview" src="">
         </p>
       </div>
        <div class="column center">
-          <h3> <!--NOME--->
-            <strong> 
-              Dualtron Thunder 2 Electric Scooter         
+          <h3>
+            <strong id="name-preview"> 
+              
             </strong>
           </h3>
-          <h6 class="smaller"> <!--Descrição--->   
-            The Thunder 2 has arrived! The second iteration of what was widely known as the best electric scooter in the world, the Dualtron Thunder. A 72 volt, 40 amp hour battery pack with the new LG M50T 21700 cells will get you up to 105 miles of range. Peak power of up to 10,080 watts will get you where you are going in a blink of an eye. New features include a 4th generation frame with integrated LED kick tail, turn signals, and a horn. The legend continues with the Thunder 2 Electric Scooter!
+          <h6 class="smaller" id="desc-preview">
+            
           </h6>
           <p>            
             <button class="button-27-adp smaller" role="button">
@@ -66,9 +60,24 @@
        </div>
     </div>
   </div>
+<script>
+document.getElementById('spare_parts_picture').oninput = function () {
+  var src = document.getElementById('spare_parts_picture').value;
+  document.getElementById('img-preview').src = src;        
+}
+
+document.getElementById('spare_parts_name').oninput = function () {
+  var src = document.getElementById('spare_parts_name').value;
+  document.getElementById('name-preview').innerHTML  = src;     
+}
+
+document.getElementById('spare_parts_description').oninput = function () {
+  var src = document.getElementById('spare_parts_description').value;
+  document.getElementById('desc-preview').innerHTML  = src;                
+}
+</script>
 
 </div>
 
 
-    
     
