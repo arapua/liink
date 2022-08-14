@@ -36,10 +36,10 @@ defmodule Liink.MixProject do
     [
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
-      {:floki, ">= 0.30.0", only: :test},
-      {:excoveralls, "~> 0.10", only: :test},
       {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:floki, ">= 0.30.0", only: :test},
+      {:excoveralls, "~> 0.10", only: :test},
       {:phoenix, "~> 1.6.10"},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.6"},
