@@ -22,14 +22,14 @@ defmodule LiinkWeb.SparePartsControllerTest do
   describe "index" do
     test "lists all parts", %{conn: conn} do
       conn = get(conn, Routes.spare_parts_path(conn, :index))
-      assert html_response(conn, 200) =~ "Listing Parts"
+      assert html_response(conn, 200) =~ "Criar novo anúncio"
     end
   end
 
   describe "new spare_parts" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.spare_parts_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Spare parts"
+      assert html_response(conn, 200) =~ "Criar novo anúncio!"
     end
   end
 
@@ -41,12 +41,12 @@ defmodule LiinkWeb.SparePartsControllerTest do
       assert redirected_to(conn) == Routes.spare_parts_path(conn, :show, id)
 
       conn = get(conn, Routes.spare_parts_path(conn, :show, id))
-      assert html_response(conn, 200) =~ "Link"
+      assert html_response(conn, 200) =~ "Comprar Agora!"
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.spare_parts_path(conn, :create), spare_parts: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Spare parts"
+      assert html_response(conn, 200) =~ "Criar novo anúncio!"
     end
   end
 
@@ -55,7 +55,7 @@ defmodule LiinkWeb.SparePartsControllerTest do
 
     test "renders form for editing chosen spare_parts", %{conn: conn, spare_parts: spare_parts} do
       conn = get(conn, Routes.spare_parts_path(conn, :edit, spare_parts))
-      assert html_response(conn, 200) =~ "Edit Spare parts"
+      assert html_response(conn, 200) =~ "Editar anúncio!"
     end
   end
 
@@ -69,14 +69,14 @@ defmodule LiinkWeb.SparePartsControllerTest do
       assert redirected_to(conn) == Routes.spare_parts_path(conn, :show, spare_parts)
 
       conn = get(conn, Routes.spare_parts_path(conn, :show, spare_parts))
-      assert html_response(conn, 200) =~ "some updated device"
+      assert html_response(conn, 200) =~ "Comprar Agora!"
     end
 
     test "renders errors when data is invalid", %{conn: conn, spare_parts: spare_parts} do
       conn =
         put(conn, Routes.spare_parts_path(conn, :update, spare_parts), spare_parts: @invalid_attrs)
 
-      assert html_response(conn, 200) =~ "Edit Spare parts"
+      assert html_response(conn, 200) =~ "Editar anúncio!"
     end
   end
 

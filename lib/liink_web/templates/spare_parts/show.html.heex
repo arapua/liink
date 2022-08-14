@@ -1,29 +1,43 @@
+<!--< #{@spare_parts.device} -->
+<div class="row">
+  <div class="column column-img">
 
-<h3><%= link "< #{@spare_parts.device}", to: Routes.spare_parts_path(@conn, :index) %></h3>
+    <p> 
+    <img src={"#{@spare_parts.picture}"} class="img-show">
+    </p>
 
-<ul>
+  </div>
 
-  <li>
-    <strong>Link:</strong>
-    <a href={"#{@spare_parts.link}"}>Clique aqui</a>
-  </li>
+  <div class="column center">
+    
+    <h1>
+      <strong> 
+        <%= @spare_parts.name %> 
+      </strong>
+    </h1>
 
-  <li>
-    <strong>Picture:</strong> 
-     <img src={"#{@spare_parts.picture}"} max-width="600" width="auto" max-height="300" height="auto">
-  </li>
+    <h4>       
+      <%= @spare_parts.description %>
+    </h4>
 
-  <li>
-    <strong>Name:</strong>
-    <%= @spare_parts.name %>
-  </li>
-
-  <li>
-    <strong>Description:</strong>
-    <%= @spare_parts.description %>
-  </li>
-
-</ul>
-
-<span><%= link "Edit", to: Routes.spare_parts_path(@conn, :edit, @spare_parts) %></span> | 
-<span><%= link "Delete", to: Routes.spare_parts_path(@conn, :delete, @spare_parts), method: :delete, data: [confirm: "Are you sure?"] %></span>
+    <p>
+      <a href={"#{@spare_parts.link}"}>
+        <button class="button-27" role="button">
+          Comprar Agora!      
+        </button>      
+      </a>        
+    </p>
+    <p>
+      <a href={Routes.spare_parts_path(@conn, :index)}>
+        <button class="button-27-invert" role="button">
+          Voltar     
+        </button>      
+      </a>        
+    </p>
+        
+    <p>
+      <span><%= link "Edit", to: Routes.spare_parts_path(@conn, :edit, @spare_parts) %></span> | 
+      <span><%= link "Delete", to: Routes.spare_parts_path(@conn, :delete, @spare_parts), method: :delete, data: [confirm: "Are you sure?"] %></span>
+    </p>
+  </div>
+</div>

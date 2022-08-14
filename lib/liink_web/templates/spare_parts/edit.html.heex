@@ -1,5 +1,16 @@
-<h1>Edit Spare parts</h1>
+<h1 class="medium">
+    <strong>
+        Editar anúncio!
+    </strong>
+</h1>
 
+<hr>
 <%= render "form.html", Map.put(assigns, :action, Routes.spare_parts_path(@conn, :update, @spare_parts)) %>
 
-<span><%= link "Back", to: Routes.spare_parts_path(@conn, :show, @spare_parts) %></span>
+<p>
+    <a href={Routes.spare_parts_path(@conn, :show, @spare_parts)}>
+        <button class="button-27-invert-sml" role="button">
+            Voltar     
+        </button>      
+    </a>        
+</p>

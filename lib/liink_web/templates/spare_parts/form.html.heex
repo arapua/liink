@@ -1,31 +1,91 @@
-<.form let={f} for={@changeset} action={@action}>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
-    </div>
-  <% end %>
+<div class="row" width="100%">
+  <div class="column">
+    <.form let={f} for={@changeset} action={@action}>
+      <%= if @changeset.action do %>
+        <div class="alert alert-danger">
+          <p>Oops, something went wrong! Please check the errors below.</p>
+        </div>
+      <% end %>
 
-  <%= label f, :device %>
-  <%= text_input f, :device %>
-  <%= error_tag f, :device %>
+      <%= label f, :Categoria %>
+      <%= text_input f, :device %>
+      <%= error_tag f, :device %>
 
-  <%= label f, :name %>
-  <%= text_input f, :name %>
-  <%= error_tag f, :name %>
+      <%= label f, :Título %>
+      <%= text_input f, :name %>
+      <%= error_tag f, :name %>
 
-  <%= label f, :description %>
-  <%= textarea f, :description %>
-  <%= error_tag f, :description %>
+      <%= label f, :Descrição %>
+      <%= textarea f, :description %>
+      <%= error_tag f, :description %>
 
-  <%= label f, :link %>
-  <%= text_input f, :link %>
-  <%= error_tag f, :link %>
+      <%= label f, :Link_de_Associado %>
+      <%= text_input f, :link %>
+      <%= error_tag f, :link %>
 
-  <%= label f, :picture %>
-  <%= text_input f, :picture %>
-  <%= error_tag f, :picture %>
+      <%= label f, :Link_da_Imagem %>
+      <%= text_input f, :picture %>
+      <%= error_tag f, :picture %>
 
-  <div>
-    <%= submit "Save" %>
+
+      
+      <div>
+        <%= submit "Salvar" %>
+      </div>
+    </.form>
   </div>
-</.form>
+  <div class="column">
+    <h3><strong>Preview:</strong></h3>
+    <div class="row">
+      <div class="column column-img">
+        <p> 
+          <img class="img-show" id="img-preview" src="">
+        </p>
+      </div>
+       <div class="column center">
+          <h3>
+            <strong id="name-preview"> 
+              
+            </strong>
+          </h3>
+          <h6 class="smaller" id="desc-preview">
+            
+          </h6>
+          <p>            
+            <button class="button-27-adp smaller" role="button">
+              Comprar Agora!      
+            </button>                  
+          </p>
+          <p>
+            <button class="button-27-invert" role="button">
+              Voltar     
+            </button>                       
+          </p>
+          
+       </div>
+    </div>
+  </div>
+<script>
+document.getElementById('img-preview').src = document.getElementById('spare_parts_picture').value; 
+document.getElementById('spare_parts_picture').oninput = function () {
+  var src = document.getElementById('spare_parts_picture').value;
+  document.getElementById('img-preview').src = src;        
+}
+
+document.getElementById('name-preview').innerHTML  = document.getElementById('spare_parts_name').value;     
+document.getElementById('spare_parts_name').oninput = function () {
+  var src = document.getElementById('spare_parts_name').value;
+  document.getElementById('name-preview').innerHTML  = src;     
+}
+
+document.getElementById('desc-preview').innerHTML  = document.getElementById('spare_parts_description').value;     
+document.getElementById('spare_parts_description').oninput = function () {
+  var src = document.getElementById('spare_parts_description').value;
+  document.getElementById('desc-preview').innerHTML  = src;                
+}
+</script>
+
+</div>
+
+
+    
