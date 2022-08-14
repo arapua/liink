@@ -61,16 +61,19 @@
     </div>
   </div>
 <script>
+document.getElementById('img-preview').src = document.getElementById('spare_parts_picture').value; 
 document.getElementById('spare_parts_picture').oninput = function () {
   var src = document.getElementById('spare_parts_picture').value;
   document.getElementById('img-preview').src = src;        
 }
 
+document.getElementById('name-preview').innerHTML  = document.getElementById('spare_parts_name').value;     
 document.getElementById('spare_parts_name').oninput = function () {
   var src = document.getElementById('spare_parts_name').value;
   document.getElementById('name-preview').innerHTML  = src;     
 }
 
+document.getElementById('desc-preview').innerHTML  = document.getElementById('spare_parts_description').value;     
 document.getElementById('spare_parts_description').oninput = function () {
   var src = document.getElementById('spare_parts_description').value;
   document.getElementById('desc-preview').innerHTML  = src;                
