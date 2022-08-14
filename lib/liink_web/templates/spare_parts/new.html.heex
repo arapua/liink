@@ -9,4 +9,10 @@
 
 <%= render "form.html", Map.put(assigns, :action, Routes.spare_parts_path(@conn, :create)) %>
 
-<span><%= link "<- Voltar", to: Routes.spare_parts_path(@conn, :index) %></span>
+<p>
+    <a href={Routes.spare_parts_path(@conn, :index)}>
+        <button class="button-27-invert-sml" role="button">
+            Voltar     
+        </button>      
+    </a>        
+</p>
