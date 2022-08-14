@@ -25,6 +25,14 @@ defmodule Liink.Parts.SpareParts do
     )
   end
 
+  def most_used_names() do
+    from(parts in __MODULE__,
+      group_by: :name,
+      select: parts.name,
+      order_by: [desc: count(parts.id)]
+    )
+  end
+
   @doc false
   def changeset(spare_parts, attrs) do
     spare_parts
