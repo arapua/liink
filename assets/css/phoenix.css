@@ -192,6 +192,50 @@ header nav a {
   transform: translateY(0);
 }
 
+.button-27-adp {
+  
+  background-color: #000000;
+  
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  
+  font-size:1.5rem;
+  line-height:1.3;   
+  
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+
+  width: auto;  
+  display: inline-block;
+
+  padding-left: 5px;
+  padding-right: 5px;
+
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.button-27-adp:disabled {
+  pointer-events: none;
+}
+
+.button-27-adp:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-27-adp:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
 .txt-center{
   text-align: center;
 }
@@ -271,4 +315,63 @@ header nav a {
   justify-content: center;
   align-items: center;
   
+}
+
+/* -- TABLE --> <!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE --> */
+
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+
+table {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+table * {
+  position: relative;
+}
+table thead tr {
+  background: #000000;
+}
+
+.table100-head th{  
+  color: #fff;  
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr {  
+  color: #000000;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: #dddcdb;
+  cursor: pointer;
+}
+
+.column1{
+  text-align: left;
+  text-indent: 24px;
+
+}
+
+.clm-1{
+  text-indent: 13px;
+  border-left: 1rem ridge #000000;
+  
+}
+.column2{
+  text-align: center;  
+}
+.column3{
+  text-align: center;
+}
+
+.column4{
+  text-align: center;
 }

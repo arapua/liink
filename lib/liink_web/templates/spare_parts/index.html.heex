@@ -115,30 +115,51 @@
   </div>
 <% end %>
 
+<!-- TABLE --> <!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Name | Device</th>
-      <th>Link</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for spare_parts <- @parts do %>
-    <tr>
-      <td>
-        <span><%= link "#{spare_parts.name} | #{spare_parts.device}", to: Routes.spare_parts_path(@conn, :show, spare_parts) %></span>
-      </td>
-      <td><a href={"#{spare_parts.link}"}>Clique aqui</a></td>
 
-      <td>
-        <span><%= link "Show", to: Routes.spare_parts_path(@conn, :show, spare_parts) %></span> | 
-        <span><%= link "Edit", to: Routes.spare_parts_path(@conn, :edit, spare_parts) %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
 
-<span><%= link "New Spare parts", to: Routes.spare_parts_path(@conn, :new) %></span>
+<div class="table100">
+  <table>
+    <thead>
+      <tr class="table100-head">
+        <th class="column1">Nome</th>
+        <th class="column2">Categoria</th>
+        <th class="column3">Link</th>
+        <th class="column4">Ações</th>          
+      </tr>
+    </thead>
+      <tbody>
+      <%= for spare_parts <- @parts do %>
+          <tr>
+            <td class="column1 clm-1">
+              <span><%= link "#{spare_parts.name}", to: Routes.spare_parts_path(@conn, :show, spare_parts) %></span>
+            </td>
+            <td class="column2"><a href={"#{spare_parts.device}"}><%="#{spare_parts.device}"%></a></td>
+            <td class="column3"><a href={"#{spare_parts.link}"}>Clique aqui</a></td>
+
+            <td class="column4">
+              <span><%= link "Editar", to: Routes.spare_parts_path(@conn, :edit, spare_parts) %></span> | 
+              <span><%= link "Apagar", to: Routes.spare_parts_path(@conn, :delete, spare_parts) %></span>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+  </table>
+</div>  
+
+
+<!-- TABLE --> <!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE --><!-- TABLE -->
+
+<h2>Iae, que tal 
+  <span>
+    <a href={Routes.spare_parts_path(@conn, :new)}>
+        <button class="button-27-adp" role="button">
+          Criar novo anúncio  
+        </button>      
+    </a>  
+  </span> 
+  ? E aumentar suas vendas!
+</h2> 
+
+
