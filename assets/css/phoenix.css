@@ -245,6 +245,18 @@ header nav a {
   line-height: 1.25;
 }
 
+.medium{
+  font-size: 4rem; 
+  line-height: 1.25;
+}
+
+.smaller{
+
+  font-size: 1.1rem; 
+  line-height: 1;
+
+}
+
 /* <!-- RADIO --> <!-- RADIO -->  <!-- RADIO -->  <!-- RADIO -->  <!-- RADIO --> */
 .hover-checkbox{
   display: flex;
@@ -374,4 +386,17 @@ tbody tr:hover {
 
 .column4{
   text-align: center;
+}
+
+hr {
+  margin-top: 0px;
+	border: 0;
+	border-top: 0.5rem solid #000000;
+  border-radius: 15px;
+  width: 47%;
+}
+
+.img-preview{
+  max-width: 50%;
+  max-height: 50%;
 }
