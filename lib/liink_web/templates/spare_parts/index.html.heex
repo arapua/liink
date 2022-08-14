@@ -140,7 +140,7 @@
 
             <td class="column4">
               <span><%= link "Editar", to: Routes.spare_parts_path(@conn, :edit, spare_parts) %></span> | 
-              <span><%= link "Apagar", to: Routes.spare_parts_path(@conn, :delete, spare_parts) %></span>
+              <span><%= link "Apagar", to: Routes.spare_parts_path(@conn, :delete, spare_parts), method: :delete, data: [confirm: "Are you sure?"] %></span>
             </td>
           </tr>
       <% end %>
